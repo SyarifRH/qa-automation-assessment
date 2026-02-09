@@ -11,8 +11,7 @@
 ## AI Tools Used
 
 1. **ChatGPT**: Generated initial test structure
-2. **GitHub Copilot**: Code completion and suggestions
-3. **Claude**: Debugging assistance
+2. **DeepSeeks**: Debugging assistance
 
 ## Test Flow
 
