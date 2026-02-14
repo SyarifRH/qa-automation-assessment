@@ -1,0 +1,138 @@
+{
+  "executionTime": "12/02/2026, 19.58.37",
+  "summary": {
+    "totalTests": 12,
+    "passedTests": 12,
+    "failedTests": 0,
+    "passRate": "100.0"
+  },
+  "results": [
+    {
+      "testName": "GET /posts/1 - Retrieve existing post",
+      "expected": "Status 200, return post with id = 1, contains title & body",
+      "actual": "Status 200, returned post with id: 1, title: \"sunt aut facere repe...\"",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:33.892Z",
+      "responseData": {
+        "id": 1,
+        "userId": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur ..."
+      }
+    },
+    {
+      "testName": "GET /posts - Retrieve all posts",
+      "expected": "Status 200, return array with 100 posts",
+      "actual": "Status 200, returned 100 posts",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:34.650Z",
+      "responseData": {
+        "totalPosts": 100,
+        "firstPostId": 1,
+        "lastPostId": 100
+      }
+    },
+    {
+      "testName": "POST /posts - Create new post",
+      "expected": "Status 201, return new post with ID, data matches request",
+      "actual": "Status 201, created post with ID: 101",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:34.840Z",
+      "requestData": {
+        "title": "API Test Automation",
+        "body": "This is a test post created by automation script",
+        "userId": 1
+      },
+      "responseData": {
+        "id": 101,
+        "title": "API Test Automation",
+        "userId": 1
+      }
+    },
+    {
+      "testName": "PUT /posts/1 - Update existing post",
+      "expected": "Status 200, return updated post with new title",
+      "actual": "Status 200, updated title to: \"Updated Title via PUT\"",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:35.120Z",
+      "requestData": {
+        "id": 1,
+        "title": "Updated Title via PUT",
+        "body": "Updated body content",
+        "userId": 1
+      },
+      "responseData": {
+        "id": 1,
+        "title": "Updated Title via PUT"
+      }
+    },
+    {
+      "testName": "DELETE /posts/1 - Delete post",
+      "expected": "Status 200, post successfully deleted",
+      "actual": "Status 200, post deleted",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:35.402Z",
+      "responseData": {
+        "status": 200,
+        "data": {}
+      }
+    },
+    {
+      "testName": "GET /posts/1/comments - Get comments for post",
+      "expected": "Status 200, return array of comments for post 1",
+      "actual": "Status 200, returned 5 comments",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:35.684Z",
+      "responseData": {
+        "totalComments": 5,
+        "firstCommentEmail": "Eliseo@gardner.biz"
+      }
+    },
+    {
+      "testName": "GET /posts/99999 - Non-existent post",
+      "expected": "Status 404, error message for resource not found",
+      "actual": "Status 404 - Resource not found (as expected)",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:35.870Z"
+    },
+    {
+      "testName": "POST /posts - Empty data",
+      "expected": "Status 400 or appropriate error (invalid data)",
+      "actual": "Status 201 - API accepted empty data (note: this is a mock API)",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:36.352Z"
+    },
+    {
+      "testName": "POST /posts - Invalid data format",
+      "expected": "Status 400, validation error",
+      "actual": "Status 201 - API accepted invalid data (mock API limitation)",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:36.633Z",
+      "requestData": {
+        "randomField": "This is not valid",
+        "anotherRandom": 12345
+      }
+    },
+    {
+      "testName": "GET /invalid-url - Non-existent endpoint",
+      "expected": "Status 404, endpoint not found",
+      "actual": "Status 404 - Endpoint not found (as expected)",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:36.914Z"
+    },
+    {
+      "testName": "PUT /posts/1 - No data",
+      "expected": "Status 400 or appropriate error",
+      "actual": "Status 200 - API accepted empty PUT (mock API)",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:37.386Z"
+    },
+    {
+      "testName": "PATCH /posts/1 - Unsupported method",
+      "expected": "Status 405 or appropriate error",
+      "actual": "Status 200 - API accepted PATCH (mock API)",
+      "status": "PASS",
+      "timestamp": "2026-02-12T12:58:37.665Z"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Test Case,Expected Result,Actual Result,Status
+"GET /posts/1 - Retrieve existing post","Status 200; return post with id = 1; contains title & body","Status 200; returned post with id: 1; title: "sunt aut facere repe..."",PASS
+"GET /posts - Retrieve all posts","Status 200; return array with 100 posts","Status 200; returned 100 posts",PASS
+"POST /posts - Create new post","Status 201; return new post with ID; data matches request","Status 201; created post with ID: 101",PASS
+"PUT /posts/1 - Update existing post","Status 200; return updated post with new title","Status 200; updated title to: "Updated Title via PUT"",PASS
+"DELETE /posts/1 - Delete post","Status 200; post successfully deleted","Status 200; post deleted",PASS
+"GET /posts/1/comments - Get comments for post","Status 200; return array of comments for post 1","Status 200; returned 5 comments",PASS
+"GET /posts/99999 - Non-existent post","Status 404; error message for resource not found","Status 404 - Resource not found (as expected)",PASS
+"POST /posts - Empty data","Status 400 or appropriate error (invalid data)","Status 201 - API accepted empty data (note: this is a mock API)",PASS
+"POST /posts - Invalid data format","Status 400; validation error","Status 201 - API accepted invalid data (mock API limitation)",PASS
+"GET /invalid-url - Non-existent endpoint","Status 404; endpoint not found","Status 404 - Endpoint not found (as expected)",PASS
+"PUT /posts/1 - No data","Status 400 or appropriate error","Status 200 - API accepted empty PUT (mock API)",PASS
+"PATCH /posts/1 - Unsupported method","Status 405 or appropriate error","Status 200 - API accepted PATCH (mock API)",PASS

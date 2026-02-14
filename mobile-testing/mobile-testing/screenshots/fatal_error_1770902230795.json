@@ -1,0 +1,5 @@
+{
+  "timestamp": "2026-02-12T13:17:10.795Z",
+  "error": "Unable to connect to \"http://localhost:4723/wd/hub\", make sure browser driver is running on that address.\nIt seems like the service failed to start or is rejecting any connections.",
+  "stack": "Error: Unable to connect to \"http://localhost:4723/wd/hub\", make sure browser driver is running on that address.\nIt seems like the service failed to start or is rejecting any connections.\n    at startWebDriverSession (file:///D:/project%20automation/qa-automation-assessment/node_modules/webdriver/build/node.js:1114:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async _WebDriver.newSession (file:///D:/project%20automation/qa-automation-assessment/node_modules/webdriver/build/node.js:1532:41)\n    at async remote (file:///D:/project%20automation/qa-automation-assessment/node_modules/webdriverio/build/node.js:9058:20)\n    at async runMobileTests (D:\\project automation\\qa-automation-assessment\\mobile-testing\\test-scripts.js:651:14)\n    at async D:\\project automation\\qa-automation-assessment\\mobile-testing\\test-scripts.js:764:5"
+}
